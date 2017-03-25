@@ -1,0 +1,10 @@
+import csv
+
+with open('WBResult.csv','rb') as csvfile:
+    reader=csv.DictReader(csvfile)
+    for row in reader:
+        if row['No.']=='2000':
+            with open("missed.txt",'a') as f:
+                f.write(str(row['ROLL'])+'\n')
+            print row['ROLL']
+    
